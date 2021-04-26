@@ -56,11 +56,24 @@ namespace Media4Notas
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.Write("Digite somente notas entre 0 e 10.");
             }
-            else 
+            else if (resultado >=7)
             {
-                Console.WriteLine($"\nresultado {resultado:N1}");
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine($"\nVocê Ficou com Média {resultado:N1}. Resultado: Aprovado. PARABÉNS!");
+                Console.ResetColor();
             }
-            Console.ResetColor();
+            else if (resultado <5)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine($"\nVocê Ficou com Média {resultado:N1}. Resultado: Reprovado. Ramelou!");
+                    Console.ResetColor();
+                }
+                else 
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine($"\nVocê Ficou com Média {resultado:N1}. Resultado: Recuperação. Você Precisa se Esforçar Mais!");
+                    Console.ResetColor();              
+                }
         }
     }
 }
